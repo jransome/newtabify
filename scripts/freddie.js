@@ -1,15 +1,18 @@
 window.onload = function(){
     const apiKey = "814e605f58e6aaf7e798e6161f0e73fb";
-        function createELement(){
-            let div = document.createElement("div");
-            let node = document.createTextNode("");
-            div.setAttribute("id", "city")
-            div.appendChild(node);
-            document.getElementById('freddie').appendChild(div)
-            console.log("element created");
-        }
 
-        createELement();
+    function createELement(tag, parent, text = "" ,attributeTag, attributeInfo){
+        let element = document.createElement(tag);
+        let node = document.createTextNode(text);
+        if (attributeTag) {
+            element.setAttribute(attributeTag, attributeInfo)
+        }
+        element.appendChild(node);
+        document.querySelector(parent).appendChild(element)
+    }
+
+
+        createELement("div", "#freddie", "", "id", "city");
     // Weather
     let usableData, fiveDayForecast, cityElement;
     
