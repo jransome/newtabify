@@ -16,7 +16,7 @@ window.onload = function(){
     
     async function getData(){
         try {
-            const result = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=london&appid=814e605f58e6aaf7e798e6161f0e73fb`);
+            const result = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=london&appid=814e605f58e6aaf7e798e6161f0e73fb`);
             const jsonData = await result.json();
             // console.log(jsonData);
             return jsonData
@@ -33,7 +33,7 @@ window.onload = function(){
         return data;
     }).then(data2 => {
         console.log(data2);
-        cityElement.innerText = usableData.city.name;
+        cityElement.innerText = usableData.name;
     })
 
 }
