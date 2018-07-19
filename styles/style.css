@@ -1,0 +1,8 @@
+.wrapper {
+    background-color: burlywood;
+    display: flex;
+}
+
+.api-block {
+    background-color: aqua;
+}
