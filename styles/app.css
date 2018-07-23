@@ -1,0 +1,14 @@
+.wrapper {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.widget__1 {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+}
