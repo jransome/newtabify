@@ -1,12 +1,21 @@
 import widgetFactory from './widgetFactory.js';
+import dayAndTime from './dayAndTime.js';
 
 function getData() {
   return {
-    "backgroundImageTheme": "architecture",
+    "backgroundImageTheme": "cars",
     "widgets": [
       {
+        name: "dayAndTime",
+        data: "",
+        component: dayAndTime,
+      },
+      {
         "name": "dayAndTime"
-      }
+      },
+      {
+        "name": "dayAndTime"
+      },
     ]
   }
 }

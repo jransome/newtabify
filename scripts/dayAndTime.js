@@ -1,4 +1,3 @@
-
 export default function dayAndTime() {
   const dateOptions = {
     weekday: 'long',
