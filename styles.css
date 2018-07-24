@@ -1,0 +1,24 @@
+html, body {
+  background-color: rgb(240, 240, 240);
+}
+
+#news {
+  width: 400px;
+  height: 300px;
+  padding: 16px;
+  margin: 8px;
+  position: relative;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); 
+}
+
+#headlines {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.headline {
+  display: block;
+  margin: 8px;
+}
