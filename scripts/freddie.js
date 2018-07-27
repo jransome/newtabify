@@ -11,8 +11,13 @@ window.onload = function(){
             element.appendChild(node);
             document.querySelector(parent).appendChild(element)
         }
-    
-    
+
+        function createApiBlock(){
+            createELement("div", ".wrapper", "", "class", "api-block");
+        }
+
+        createApiBlock();
+
         createELement("div", "#freddie", "", "id", "city");
         // createELement("div", "#freddie", "Todays Forecast")
         createELement("div", "#freddie", "", "id", "forecast");
@@ -46,8 +51,8 @@ window.onload = function(){
             console.log(data2);
             cityElement.innerText = usableData.name;
             forecastElement.innerText = `Todays Forecast: ${usableData.weather[0].main}`;
-            minElement.innerText = `${usableData.main.temp_min - 273.15 }C`;
-            maxElement.innerText = `${usableData.main.temp_max - 273.15 }C`
+            minElement.innerText = `Min: ${usableData.main.temp_min - 273.15 }C`;
+            maxElement.innerText = `Max: ${usableData.main.temp_max - 273.15 }C`
         })
 
     }
