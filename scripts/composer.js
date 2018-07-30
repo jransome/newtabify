@@ -10,21 +10,16 @@ function getData() {
         data: "",
         component: dayAndTime,
       },
-      {
-        "name": "dayAndTime"
-      },
-      {
-        "name": "dayAndTime"
-      },
     ]
   }
 }
 
-function composerFactory(document) {
+function composer(document) {
   const wrapper = document.querySelector("body")
 
   function renderWidgets(widgets) {
     return widgets.map((widget) => {
+      console.log(widget)
       return widgetFactory().render(widget)
     }).join(" ", "")
   }
@@ -42,4 +37,4 @@ function composerFactory(document) {
   return Object.freeze({ render })
 }
 
-composerFactory(document).render(getData())
+composer(document).render(getData())

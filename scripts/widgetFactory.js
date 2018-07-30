@@ -1,11 +1,9 @@
-import dayAndTime from './dayAndTime.js';
-
 export default function widgetFactory() {
   function render({ name, component, data }) {
     return `
-      <div class="widget__1">
+      <div class="widget">
         <h2>${name}</h2>
-        ${component.render()}
+        ${component().render()}
       </div>
     `
   }
