@@ -18,9 +18,13 @@ async function populateWeatherElement(){
         <p> ${weatherData.name} </p>
         <p> Todays Forecast: ${weatherData.weather[0].main} </p>
         <p> <img src="http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png"> </p>
-        <p> Min: ${weatherData.main.temp_min - 273.15 }C </p>
-        <p> Max: ${weatherData.main.temp_max - 273.15 }C </p>
+        <p> Min: ${kelvinToCelcius(weatherData.main.temp_min)}C </p>
+        <p> Max: ${kelvinToCelcius(weatherData.main.temp_max)}C </p>
     `
+}
+
+function kelvinToCelcius(temp){
+    return temp - 273.15;
 }
 
 export default () => async function render() {
