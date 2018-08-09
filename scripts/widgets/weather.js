@@ -6,7 +6,6 @@ async function getData(){
     try {
         const result = await fetch(url);
         const jsonData = await result.json();
-        console.log(jsonData);
         return jsonData
     } catch (error) {
         console.log(error);
@@ -18,6 +17,7 @@ async function populateWeatherElement(){
     return `
         <p> ${weatherData.name} </p>
         <p> Todays Forecast: ${weatherData.weather[0].main} </p>
+        <p> <img src="http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png"> </p>
         <p> Min: ${weatherData.main.temp_min - 273.15 }C </p>
         <p> Max: ${weatherData.main.temp_max - 273.15 }C </p>
     `
