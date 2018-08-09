@@ -4,16 +4,17 @@ import renderWidget from './widgetFactory.js';
 import dayAndTime from './widgets/dayAndTime.js';
 import news from './widgets/news.js';
 import fakeNews from './widgets/fakeNews.js';
+import weather from './widgets/weather.js';
 
 function getPreferences() {
   return {
     "backgroundImageTheme": "space",
     "widgets": [
-      // {
-      //   name: "fake",
-      //   data: "",
-      //   component: fakeNews,
-      // },      
+      {
+        name: "weather",
+        data: "",
+        component: weather(),
+      },      
       {
         name: "Date",
         data: "",
@@ -37,6 +38,7 @@ function renderWidgets(widgets) {
 }
 
 async function render(data) {
+  console.log(data);
   wrapper.innerHTML = `
     <section
       class="wrapper"
