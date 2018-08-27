@@ -1,4 +1,4 @@
-export default async function render({ name, component, data }) {
+export default async function render({ name, component }) {
   return `
       <div class="widget">
         <h2>${name}</h2>
