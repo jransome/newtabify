@@ -1,10 +1,5 @@
-function consoleLogStorage(key) {
-  chrome.storage.sync.get(key, state => console.log(state));
-}
-
 function setStorage(object) {
   chrome.storage.sync.set(object);
-  consoleLogStorage(Object.keys(object)[0]);
 }
 
 document.querySelector("form").addEventListener("change", event => {
@@ -32,17 +27,12 @@ document.querySelector("form").addEventListener("change", event => {
   }
 });
 
-function setOption(params) {
-}
-
 function loadOptionsFromStorage() {
-  const optionKeys = ["background", "backgroundColor", "backgroundTheme"]
+  const optionKeys = ["background", "backgroundColor", "backgroundTheme"];
 
   optionKeys.forEach(key => {
     try {
-      // console.log(key);
       chrome.storage.sync.get(key, state => {
-        // console.log(state[key]);
         switch (key) {
           case "background":
             if (state[key] === "color") {
@@ -53,24 +43,23 @@ function loadOptionsFromStorage() {
               document.getElementsByName("backgroundColor")[0].checked = false;
             }
             break;
-            
+
           case "backgroundColor":
-            document.getElementsByName("inputColor")[0].value = state[key]
+            document.getElementsByName("inputColor")[0].value = state[key];
             break;
-            
+
           case "backgroundTheme":
-            document.getElementsByName("inputTheme")[0].value = state[key]
+            document.getElementsByName("inputTheme")[0].value = state[key];
             break;
-        
+
           default:
             break;
         }
-        
       });
-    } catch {
-
+    } catch (error) {
+      console.log(error);
     }
-  })
+  });
 }
 
-loadOptionsFromStorage()
+loadOptionsFromStorage();
